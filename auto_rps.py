@@ -1,4 +1,4 @@
-from cam_manual import camera_feed
+from camera_auto import camera_feed
 import time
 import random
 plays = ['Rock', 'Scissors', 'Paper', 'Nothing']
@@ -9,11 +9,8 @@ def get_computer_choice():
     return random.choice(plays[0:3])
 
 def get_user_choice():
-    start = time.time()
-    print("Press the 'a' key to play your hand")
     player_play = camera_feed()
-    elapsed_time = round((time.time() - start), 2)
-    print(f"Player has chosen to play {player_play}. Decision took {elapsed_time} seconds")
+    print(f"Player has chosen to play {player_play}.")
     return player_play
 
 def get_winner(cpu, player):
